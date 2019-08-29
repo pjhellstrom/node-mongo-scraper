@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/public/app.js"></script>
+  <title>Node-Mongo-Scraper</title>
+</head>
+<body>
+  <h1>Tech Crunch Scraper</h1>
+
+  <button id="scrape-btn">Scrape!</button>
+
+  <button id="display-btn">Show Result!</button>
+
+  {{{ body }}}
+
+<script>
+  $(document).ready(() => {
+    $("#scrape-btn").on('click', () => {
+      console.log("Scraping");
+      $.ajax({
+        type: "GET",
+        url: "/scrape",
+      }).then( () => {
+        location.reload()
+      })
+    });
+
+    $("#display-btn").on('click', () => {
+      console.log("Fetching");
+      $.ajax({
+        type: "GET",
+        url: "/posts",
+      }).then( (dbPost) => {
+        location.reload()
+      })
+    });
+  });
+</script>
+</body>
+</html>

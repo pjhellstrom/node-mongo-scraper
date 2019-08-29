@@ -1,0 +1,21 @@
+  <div id="posts">
+    {{#each dbPost}}
+      <div class="card">
+        <h3>{{this.title}}</h3>
+        <p>{{this.body}}</p>
+        <p href="{{this.url}}">{{this.url}}</p>
+        <img src="{{this.image}}">
+      </div>
+      <div>
+        <h4>Comments</h4>
+          {{!-- {{#each this.comments}}
+          <div>
+            <p>{{this.commentbody}}</p>
+            <button comment-id={{this._id}}>Delete Comment</button>
+          </div>
+          {{>comment}}
+          {{/each}} --}}
+      </div>
+      <button post-id={{this._id}}>Add Comment</button>
+    {{/each}}
+  </div>
