@@ -1,21 +1,26 @@
-  <div id="posts">
-    {{#each dbPost}}
-      <div class="card">
-        <h3>{{this.title}}</h3>
-        <p>{{this.body}}</p>
-        <p href="{{this.url}}">{{this.url}}</p>
-        <img src="{{this.image}}">
-      </div>
-      <div>
-        <h4>Comments</h4>
-          {{!-- {{#each this.comments}}
-          <div>
-            <p>{{this.commentbody}}</p>
-            <button comment-id={{this._id}}>Delete Comment</button>
-          </div>
-          {{>comment}}
-          {{/each}} --}}
-      </div>
-      <button post-id={{this._id}}>Add Comment</button>
-    {{/each}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">TechCrunch Scraper</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><button class="btn btn-primary scrape">Scrape TechCrunch</button></li>
+      <li><button class="btn btn-primary toSaved">Saved Articles</button></li>
+    </ul>
   </div>
+</nav>
+
+<div class="articles">
+  {{#each_upto articles 10}}
+  {{#unless saved}}
+  <div class="article">
+    <a href="{{link}}">
+      <h2>{{title}}</h2>
+    </a>
+    <p>{{summary}}</p>
+    <button class="btn btn-primary saveBtn" data-id="{{_id}}">Save</button>
+    <br>
+  </div>
+  {{/unless}}
+  {{/each_upto}}
+</div>

@@ -1,0 +1,25 @@
+.navbar-brand {
+  font-weight: bold;
+  font-size: 3.8rem;
+  margin-top: 5px;
+}
+
+.nav {
+  float: right;
+  margin: 10px;
+}
+
+.nav li {
+  margin: 2px;
+}
+
+.article {
+  margin: 25px;
+  padding: 10px;
+  border: 0.25px solid #ccc;
+}
+
+.article h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
